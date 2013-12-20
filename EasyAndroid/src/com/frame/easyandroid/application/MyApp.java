@@ -21,7 +21,7 @@ public class MyApp extends Application {
 	}
 	
 	/**
-	 * 低内存的时候发送广播：关闭正在访问的activity
+	 * 低内存的时候发送广播：关闭正在访问的activity，清理内存！
 	 * 目的避免因为OOM异常造成程序强行退出！
 	 */
 	@Override
