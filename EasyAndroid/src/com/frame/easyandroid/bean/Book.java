@@ -1,9 +1,9 @@
 package com.frame.easyandroid.bean;
 
-import com.itheima.db.dao.DBHelper;
-import com.itheima.db.dao.aonntation.Column;
-import com.itheima.db.dao.aonntation.ID;
-import com.itheima.db.dao.aonntation.Table;
+import com.frame.easyandroid.db.dao.DBHelper;
+import com.frame.easyandroid.db.dao.aonntation.Column;
+import com.frame.easyandroid.db.dao.aonntation.ID;
+import com.frame.easyandroid.db.dao.aonntation.Table;
 
 @Table(DBHelper.TABLE_BOOK)
 public class Book {

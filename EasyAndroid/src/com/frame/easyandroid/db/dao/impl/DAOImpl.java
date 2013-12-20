@@ -1,4 +1,4 @@
-package com.itheima.db.dao.impl;
+package com.frame.easyandroid.db.dao.impl;
 
 import java.io.Serializable;
 import java.lang.reflect.Field;
@@ -12,11 +12,11 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.itheima.db.dao.DAO;
-import com.itheima.db.dao.DBHelper;
-import com.itheima.db.dao.aonntation.Column;
-import com.itheima.db.dao.aonntation.ID;
-import com.itheima.db.dao.aonntation.Table;
+import com.frame.easyandroid.db.dao.DAO;
+import com.frame.easyandroid.db.dao.DBHelper;
+import com.frame.easyandroid.db.dao.aonntation.Column;
+import com.frame.easyandroid.db.dao.aonntation.ID;
+import com.frame.easyandroid.db.dao.aonntation.Table;
 
 /**
  * 数据库的基本实现类

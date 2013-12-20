@@ -1,4 +1,4 @@
-package com.itheima.db.dao.aonntation;
+package com.frame.easyandroid.db.dao.aonntation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

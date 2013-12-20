@@ -1,4 +1,4 @@
-package com.itheima.db.dao;
+package com.frame.easyandroid.db.dao;
 
 import java.io.Serializable;
 import java.util.List;

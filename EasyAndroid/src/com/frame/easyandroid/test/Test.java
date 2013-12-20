@@ -5,9 +5,9 @@ import java.util.List;
 import android.test.AndroidTestCase;
 
 import com.frame.easyandroid.bean.Book;
+import com.frame.easyandroid.db.dao.BookDao;
+import com.frame.easyandroid.db.dao.impl.BookDaoImpl;
 import com.frame.easyandroid.util.Logger;
-import com.itheima.db.dao.BookDao;
-import com.itheima.db.dao.impl.BookDaoImpl;
 
 /**
  * 测试框架，ManiFest中已经注册，直接使用
