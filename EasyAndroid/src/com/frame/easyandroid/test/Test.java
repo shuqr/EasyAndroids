@@ -19,6 +19,9 @@ public class Test extends AndroidTestCase {
 
 	private static final String tag = "Test";
 
+	/**
+	 * 测试插入Book信息
+	 */
 	public void bookInsert() {
 		BookDao dao = new BookDaoImpl(getContext());
 		Book book = new Book();
@@ -28,6 +31,9 @@ public class Test extends AndroidTestCase {
 		dao.insert(book);
 	}
 
+	/**
+	 * 修改Book信息
+	 */
 	public void bookUpdate() {
 		BookDao dao = new BookDaoImpl(getContext());
 		Book book = new Book();
@@ -36,6 +42,9 @@ public class Test extends AndroidTestCase {
 		dao.update(book);
 	}
 
+	/**
+	 * 查询Book信息
+	 */
 	public void bookQuery() {
 		BookDao dao = new BookDaoImpl(getContext());
 
@@ -43,6 +52,9 @@ public class Test extends AndroidTestCase {
 		Logger.i(tag, books.size()+"");
 	}
 
+	/**
+	 * 删除Book
+	 */
 	public void bookDelete() {
 		BookDao dao = new BookDaoImpl(getContext());
 		dao.delete(2);

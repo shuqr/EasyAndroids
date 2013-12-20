@@ -1,5 +1,6 @@
 package com.frame.easyandroid;
 
+import com.frame.easyandroid.util.Constant;
 import com.frame.easyandroid.util.Logger;
 
 import android.content.Intent;
@@ -18,6 +19,10 @@ public class MainActivity extends BaseActivity {
 
 	@Override
 	protected void setUpView() {
+		if(Constant.isBack){
+			Constant.isBack = false;
+			this.finish();
+		}
 		button = getViewById(R.id.main);
 	}
 

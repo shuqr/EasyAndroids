@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
 /**
- * 基础的一个Adapter
+ * 基础适配器
  * @author liuzhao
  * @param <T>
  */

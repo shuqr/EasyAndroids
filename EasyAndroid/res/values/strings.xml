@@ -4,5 +4,6 @@
     <string name="app_name">EasyAndroid</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="main_text">EasyAndroid框架整项目，\n欢迎使用、添加！</string>
 
 </resources>

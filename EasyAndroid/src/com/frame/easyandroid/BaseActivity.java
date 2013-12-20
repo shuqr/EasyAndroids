@@ -1,11 +1,15 @@
 package com.frame.easyandroid;
 
 import android.app.Activity;
-import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Toast;
+
+import com.frame.easyandroid.util.Constant;
+import com.frame.easyandroid.util.PromptManager;
+import com.frame.easyandroid.util.PromptManager.dialogListener;
 
 @SuppressWarnings("unchecked")
 public abstract class BaseActivity extends Activity implements OnClickListener {
@@ -21,7 +25,8 @@ public abstract class BaseActivity extends Activity implements OnClickListener {
 	/**
 	 * 获取控件的实例对象的通用方法，避免每一次的强转！
 	 * 
-	 * @param id 具体控件的Id
+	 * @param id
+	 *            具体控件的Id
 	 * @return
 	 */
 	protected <T extends View> T getViewById(int id) {
@@ -50,23 +55,32 @@ public abstract class BaseActivity extends Activity implements OnClickListener {
 	 */
 	protected abstract void setListener();
 
-	/**
-	 * 弹出Toast的工具类
-	 * 
-	 * @param context
-	 * @param msg
-	 */
-	public static void toastShow(Context context, String msg) {
-		Toast.makeText(context, msg, 1).show();
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		menu.add("");
+		return super.onCreateOptionsMenu(menu);
 	}
 
-	/**
-	 * 弹出Toast的工具类
-	 * 
-	 * @param context
-	 * @param msg
-	 */
-	public static void toastShow(Context context, int id) {
-		Toast.makeText(context, id, 1).show();
+	@Override
+	public boolean onMenuOpened(int featureId, Menu menu) {
+		PromptManager.showMenu(this, "确定退出程序？", new dialogListener() {
+
+			@Override
+			public void clickBut(boolean isOk) {
+				if (isOk) {
+					//点击确定将程序退出
+					Constant.isBack = true;
+					Intent in = new Intent(BaseActivity.this,
+							MainActivity.class);
+					in.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+					startActivity(in);
+					finish();
+				} else {
+					
+				}
+			}
+		});
+		// 将系统的菜单取消掉！
+		return false;
 	}
 }
