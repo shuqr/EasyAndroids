@@ -46,6 +46,7 @@ public class JsonDemo {
 	/**
 	 * 将Map类型的数据转换为JsonString
 	 */
+	@SuppressLint("UseSparseArrays")
 	private static void complexMap2JsonM9() {
 		Group group = new Group();
 		group.setId(1);
