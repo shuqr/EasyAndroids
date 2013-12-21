@@ -7,5 +7,6 @@
 	<classpathentry kind="lib" path="libs/android-async-http-1.4.4.jar"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
+	<classpathentry kind="src" path="config"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
