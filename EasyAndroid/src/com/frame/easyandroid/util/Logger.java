@@ -31,12 +31,12 @@ public class Logger {
 		if (Utils.checkSD()) {
 			File externalStorageDirectory = Environment
 					.getExternalStorageDirectory();
-			path = externalStorageDirectory.getAbsolutePath() + "/log/";
+			path = externalStorageDirectory.getAbsolutePath() + "/Log/";
 			File directory = new File(path);
 			if (!directory.exists()) {
 				directory.mkdirs();
 			}
-			file = new File(new File(path), "log.txt");
+			file = new File(new File(path), "Log.txt");
 			try {
 				outputStream = new FileOutputStream(file, true);
 			} catch (FileNotFoundException e) {
