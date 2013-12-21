@@ -1,5 +1,6 @@
 package com.frame.easyandroid;
 
+import com.frame.easyandroid.imageloader.ImageLoaderDemoActivity;
 import com.frame.easyandroid.util.Constant;
 import com.frame.easyandroid.util.Logger;
 
@@ -19,11 +20,12 @@ public class MainActivity extends BaseActivity {
 
 	@Override
 	protected void setUpView() {
+		//辅助关闭程序的代码
 		if(Constant.isBack){
 			Constant.isBack = false;
 			this.finish();
 		}
-		button = getViewById(R.id.main);
+		button = getViewById(R.id.main_bt);
 	}
 
 	@Override
@@ -39,7 +41,7 @@ public class MainActivity extends BaseActivity {
 
 	@Override
 	public void onClick(View v) {
-
+		Intent intent = new Intent(MainActivity.this, ImageLoaderDemoActivity.class);
+		startActivity(intent);
 	}
-
 }

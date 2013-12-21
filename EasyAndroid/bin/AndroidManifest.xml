@@ -33,9 +33,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.frame.easyandroid.imageloader.ImageLoaderDemoActivity" >
+        </activity>
 
-        <receiver android:name="com.frame.easyandroid.receiver.KillReceiver" 
-            android:exported="false">
+        <receiver
+            android:name="com.frame.easyandroid.receiver.KillReceiver"
+            android:exported="false" >
             <intent-filter android:priority="1000" >
                 <action android:name="Low_Memory_Kill" />
             </intent-filter>

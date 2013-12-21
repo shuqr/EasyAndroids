@@ -83,4 +83,5 @@ public abstract class BaseActivity extends Activity implements OnClickListener {
 		// 将系统的菜单取消掉！
 		return false;
 	}
+	
 }
