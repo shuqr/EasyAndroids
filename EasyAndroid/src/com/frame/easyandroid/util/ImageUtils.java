@@ -8,6 +8,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
 import android.graphics.BitmapFactory;
@@ -31,6 +32,117 @@ import android.graphics.drawable.Drawable;
  * 
  */
 public class ImageUtils {
+
+	/**
+	 * 根据需要（传递的参数）从网上获取合适的压缩图片。 这个方法包含：1.假解析；获取合适的一个InSampleSize。不需要分配内存！
+	 * 2.真解析；将图片进行压缩再次显示出来！真实的分配内存！
+	 * 
+	 * @param data
+	 *            byte信息
+	 * @param offset 起点
+	 * @param length 全部长度
+	 * @param reqWidth
+	 *            期望压缩后的宽度
+	 * @param reqHeight
+	 *            期望压缩后的高度
+	 * @return 压缩后的图片
+	 */
+	public static Bitmap decodeSampledBitmapFromInt(byte[] data, int offset,
+			int length, int reqWidth, int reqHeight) {
+		// 第一次解析将inJustDecodeBounds设置为true，来获取图片大小
+		final BitmapFactory.Options options = new BitmapFactory.Options();
+		options.inJustDecodeBounds = true;
+		BitmapFactory.decodeByteArray(data, offset, length, options);
+		// 调用上面定义的方法计算inSampleSize值
+		options.inSampleSize = calculateInSampleSize(options, reqWidth,
+				reqHeight);
+		// 使用获取到的inSampleSize值再次解析图片
+		options.inJustDecodeBounds = false;
+		return BitmapFactory.decodeByteArray(data, offset, length, options);
+	}
+
+	/**
+	 * 根据需要（传递的参数）从SD卡中获取合适的压缩图片。 这个方法包含：1.假解析；获取合适的一个InSampleSize。不需要分配内存！
+	 * 2.真解析；将图片进行压缩再次显示出来！真实的分配内存！
+	 * 
+	 * @param filePath
+	 *            文件路径
+	 * @param reqWidth
+	 *            期望压缩后的宽度
+	 * @param reqHeight
+	 *            期望压缩后的高度
+	 * @return 压缩后的图片
+	 */
+	public static Bitmap decodeSampledBitmapFromSD(String filePath,
+			int reqWidth, int reqHeight) {
+		// 第一次解析将inJustDecodeBounds设置为true，来获取图片大小
+		final BitmapFactory.Options options = new BitmapFactory.Options();
+		options.inJustDecodeBounds = true;
+		BitmapFactory.decodeFile(filePath, options);
+		// 调用上面定义的方法计算inSampleSize值
+		options.inSampleSize = calculateInSampleSize(options, reqWidth,
+				reqHeight);
+		// 使用获取到的inSampleSize值再次解析图片
+		options.inJustDecodeBounds = false;
+		return BitmapFactory.decodeFile(filePath, options);
+	}
+
+	/**
+	 * 根据需要（传递的参数）从资源文件中获取合适的压缩图片。 这个方法包含：1.假解析；获取合适的一个InSampleSize。不需要分配内存！
+	 * 2.真解析；将图片进行压缩再次显示出来！真实的分配内存！
+	 * 
+	 * @param res
+	 *            资源图片
+	 * @param resId
+	 * @param reqWidth
+	 *            期望压缩后的宽度
+	 * @param reqHeight
+	 *            期望压缩后的高度
+	 * @return 压缩后的图片
+	 */
+	public static Bitmap decodeSampledBitmapFromResource(Resources res,
+			int resId, int reqWidth, int reqHeight) {
+		// 第一次解析将inJustDecodeBounds设置为true，来获取图片大小
+		final BitmapFactory.Options options = new BitmapFactory.Options();
+		options.inJustDecodeBounds = true;
+		BitmapFactory.decodeResource(res, resId, options);
+		// 调用上面定义的方法计算inSampleSize值
+		options.inSampleSize = calculateInSampleSize(options, reqWidth,
+				reqHeight);
+		// 使用获取到的inSampleSize值再次解析图片
+		options.inJustDecodeBounds = false;
+		return BitmapFactory.decodeResource(res, resId, options);
+	}
+
+	/**
+	 * 获取一个合适的压缩比例：InSampleSize
+	 * 根据需要（传入的宽高设置），与原图片的宽高进行比例的调节，获取一个合适的InSampleSize也就是一个合适的压缩比例！
+	 * 
+	 * @param options
+	 *            BitmapFactory的设置选项
+	 * @param reqWidth
+	 *            期望压缩后的宽度
+	 * @param reqHeight
+	 *            期望压缩后的高度
+	 * @return 压缩后的图片
+	 */
+	private static int calculateInSampleSize(BitmapFactory.Options options,
+			int reqWidth, int reqHeight) {
+		// 源图片的高度和宽度
+		final int height = options.outHeight;
+		final int width = options.outWidth;
+		int inSampleSize = 1;
+		if (height > reqHeight || width > reqWidth) {
+			// 计算出实际宽高和目标宽高的比率
+			final int heightRatio = Math.round((float) height
+					/ (float) reqHeight);
+			final int widthRatio = Math.round((float) width / (float) reqWidth);
+			// 选择宽和高中最小的比率作为inSampleSize的值，这样可以保证最终图片的宽和高
+			// 一定都会大于等于目标的宽和高。
+			inSampleSize = heightRatio < widthRatio ? heightRatio : widthRatio;
+		}
+		return inSampleSize;
+	}
 
 	/**
 	 * 将Drawable转换为bitmap

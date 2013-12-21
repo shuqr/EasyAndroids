@@ -2,7 +2,6 @@ package com.frame.easyandroid;
 
 import com.frame.easyandroid.imageloader.ImageLoaderDemoActivity;
 import com.frame.easyandroid.util.Constant;
-import com.frame.easyandroid.util.Logger;
 
 import android.content.Intent;
 import android.view.View;
