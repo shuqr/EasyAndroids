@@ -7,18 +7,18 @@ import android.test.AndroidTestCase;
 import com.frame.easyandroid.bean.Book;
 import com.frame.easyandroid.db.dao.BookDao;
 import com.frame.easyandroid.db.dao.impl.BookDaoImpl;
+import com.frame.easyandroid.util.ImageUtils;
 import com.frame.easyandroid.util.Logger;
 
 /**
  * 测试框架，ManiFest中已经注册，直接使用
- * 此处测试的是数据库的操作！
  * @author liuzhao
  * 
  */
 public class Test extends AndroidTestCase {
 
 	private static final String tag = "Test";
-
+	
 	/**
 	 * 测试插入Book信息
 	 */
