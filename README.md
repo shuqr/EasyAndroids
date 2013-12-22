@@ -1,5 +1,4 @@
 EasyAndroids框架简介
-
 ----------------------------------- 
 
 欢迎Fork And Commit，
@@ -17,15 +16,15 @@ EasyAndroids是一个开源的快速开发框架，是我在日常开发中的�
 
 ###具体：
 
-1.BaseActivity的抽取，抽象方法！
-2.Adapter的封装与强化！
-3.设置全局的Application，实现程序异常终止时候的优雅关闭并且实现程序的重启，提升用户体验！低内存的时候发送广播，强制回收内存空间，避免OOM异常！
-4.数据库的封装，使用泛型、注解将JavaBean对象属性与数据库表的各列进行对应，不写SQL语句，方便简单的实现CRUD操作！
-5.嵌入开源框架FastJson对Json数据进行解析，附带Demo！
-6.嵌入开源框架AsyncHttpClient联网并发库实现网络的连接！
-7.嵌入开源框架Universal_ImageLoader进行图片的获取、显示处理！
-8.使用工厂模式进行解耦！
-9.关于Image的常用工具集合，以及加载缩略图的实现！
-10.全局的Log管理、以及错误信息的SD卡保存！
-11.SharedPreference的方便使用！
+1.BaseActivity的抽取，抽象方法！   
+2.Adapter的封装与强化！   
+3.设置全局的Application，实现程序异常终止时候的优雅关闭并且实现程序的重启，提升用户体验！低内存的时候发送广播，强制回收内存空间，避免OOM异常！   
+4.数据库的封装，使用泛型、注解将JavaBean对象属性与数据库表的各列进行对应，不写SQL语句，方便简单的实现CRUD操作！   
+5.嵌入开源框架FastJson对Json数据进行解析，附带Demo！   
+6.嵌入开源框架AsyncHttpClient联网并发库实现网络的连接！   
+7.嵌入开源框架Universal_ImageLoader进行图片的获取、显示处理！   
+8.使用工厂模式进行解耦！   
+9.关于Image的常用工具集合，以及加载缩略图的实现！   
+10.全局的Log管理、以及错误信息的SD卡保存！   
+11.SharedPreference的方便使用！   
 12.全局的提示管理！
