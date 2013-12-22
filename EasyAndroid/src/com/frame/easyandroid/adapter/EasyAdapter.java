@@ -10,7 +10,7 @@ import android.widget.BaseAdapter;
 /**
  * 基础适配器
  * @author liuzhao
- * @param <T>
+ * @param <T> 泛型
  */
 public abstract class EasyAdapter<T> extends BaseAdapter {
 	private List<T> mlist = new ArrayList<T>();
