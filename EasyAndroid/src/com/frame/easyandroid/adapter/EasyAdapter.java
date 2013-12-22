@@ -9,7 +9,7 @@ import android.widget.BaseAdapter;
 
 /**
  * 基础适配器
- * @author liuzhao
+ * @author liuzhao 
  * @param <T> 泛型
  */
 public abstract class EasyAdapter<T> extends BaseAdapter {
