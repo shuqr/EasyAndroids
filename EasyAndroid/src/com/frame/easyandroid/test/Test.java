@@ -7,7 +7,6 @@ import android.test.AndroidTestCase;
 import com.frame.easyandroid.bean.Book;
 import com.frame.easyandroid.db.dao.BookDao;
 import com.frame.easyandroid.db.dao.impl.BookDaoImpl;
-import com.frame.easyandroid.util.ImageUtils;
 import com.frame.easyandroid.util.Logger;
 
 /**
