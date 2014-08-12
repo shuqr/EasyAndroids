@@ -24,6 +24,7 @@ import com.frame.easyandroid.db.dao.aonntation.Table;
  *
  * @param <T>
  */
+@SuppressWarnings("unused")
 public abstract class DAOImpl<T> implements DAO<T> {
 	private static final String TAG = "DAOImpl";
 	protected DBHelper dbHelper;
@@ -223,6 +224,7 @@ public abstract class DAOImpl<T> implements DAO<T> {
 	 * 
 	 * @return
 	 */
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public T getInstence() {
 		// 问题：获取子类，拿到它的父类，获取到泛型里传递的信息
 		// 获取子类
