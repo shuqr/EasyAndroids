@@ -16,7 +16,6 @@ import com.frame.easyandroid.util.Logger;
 
 public class MyCrashHandler implements UncaughtExceptionHandler {
 	private Context context;
-	private String tag = "MyCrashHandler";
 	private static MyCrashHandler handler;
 
 	/**
