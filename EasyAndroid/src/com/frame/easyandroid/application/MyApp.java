@@ -9,6 +9,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 
+@SuppressWarnings("unused")
 public class MyApp extends Application {
 	private ImageLoader imageLoader;
 	private ImageLoaderConfiguration config;
